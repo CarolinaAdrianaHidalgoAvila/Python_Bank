@@ -1,5 +1,7 @@
 from tkinter import Message
-import CommissionAccount
+from Code.BankAccount.CommissionAccount import CommissionAccount
+
+
 class InvestmentFund(CommissionAccount):
     """ generated source for class InvestmentFund """
     isBlocked = bool()

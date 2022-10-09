@@ -1,5 +1,4 @@
 import pytest
-from Code.BankAccount.BankAccount import BankAccount
 from Code.BankAccount.CommissionAccount import CommissionAccount
 
 def test_getMonthlyReport():
