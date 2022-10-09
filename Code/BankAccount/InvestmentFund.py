@@ -1,18 +1,19 @@
-class InvestmentFund(CommissionAccount, IWithdrawMoney):
+from tkinter import Message
+import CommissionAccount
+class InvestmentFund(CommissionAccount):
     """ generated source for class InvestmentFund """
     isBlocked = bool()
 
     def __init__(self, accountNumber, customerNumber):
         """ generated source for method __init__ """
         super(InvestmentFund, self).__init__(customerNumber)
-        accountInterest = Constants.ACCOUNT_INTEREST_INVEST
+        accountInterest = 0.33
         self.isBlocked = False
-        type_ = AccountType.INVEST
 
-    def withdraw(self, amount):
+    def withdraw(self, amount, balance):
         """ generated source for method withdraw """
-        resp = Messages.NOT_ENOUHG
-        resp = withdrawWithCredit(amount) if balance + Constants.CREDIT >= amount else resp if not getIsBlocked() else Messages.BLOCKED
+        resp = "You don't have enough money in your account"
+        resp = self.withdrawWithCredit(amount) if balance + 600 >= amount else resp if not self.getIsBlocked() else "Your account is blocked"
         return resp
 
     def getIsBlocked(self):
@@ -22,10 +23,10 @@ class InvestmentFund(CommissionAccount, IWithdrawMoney):
     def equalCredit(self, amount):
         """ generated source for method equalCredit """
         self.isBlocked = True
-        return withdrawEnough(amount) + Messages.EXCEED_CREDIT
+        return CommissionAccount.withdrawEnough(amount) + " and your account has been blocked"
 
-    def withdrawWithCredit(self, amount):
+    def withdrawWithCredit(self, amount, balance):
         """ generated source for method withdrawWithCredit """
-        resp = Messages.NOT_ENOUHG
-        resp = withdrawEnough(amount) if balance + Constants.CREDIT > amount else equalCredit(amount)
+        resp ="You don't have enough money in your account"
+        resp = CommissionAccount.withdrawEnough(amount) if balance + 600 > amount else self.equalCredit(amount)
         return resp
