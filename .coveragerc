@@ -1,0 +1,9 @@
+[run]
+source = 
+    Code/
+    Code/Bank
+    Code/BankAccount
+    Code/BankEmpire
+    Code/Customer
+    Code/HighNetWorthCustomer
+    Code/SortingAlgorithms
