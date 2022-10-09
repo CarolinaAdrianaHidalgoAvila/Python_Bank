@@ -1,7 +1,13 @@
 import pytest
+from Code.BankAccount.BankAccount import BankAccount
 from Code.BankAccount.CommissionAccount import CommissionAccount
 
-#def test_getMonthlyReport():
-#    one_bank_account = CommissionAccount(100000087454, 124857)
-#    income = one_bank_account.getMonthlyReport( 0.02)
-#    assert income == -50
+def test_getMonthlyReport():
+    commission = CommissionAccount(balance=50)
+    income = commission.getMonthlyReport( 0.03)
+    assert income == 50.4
+
+def test_withdrawEnough():
+    commission = CommissionAccount(balance=50)
+    message = commission.withdrawEnough(20)
+    assert message == "You withdrew: 20"
