@@ -1,4 +1,5 @@
-import BankAccount
+from Code.BankAccount.BankAccount import BankAccount
+
 class NoCommissionAccount(BankAccount):
     """ generated source for class NoCommissionAccount """
     def __init__(self, acctType='Savings', balance=0):
