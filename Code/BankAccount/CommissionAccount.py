@@ -1,16 +1,17 @@
-import BankAccount
+from Code.BankAccount.BankAccount import BankAccount
 class CommissionAccount(BankAccount):
     """ generated source for class CommissionAccount """
-    def __init__(self, accountNumber, customerNumber):
+    def __init__(self, acctType='Savings', balance=0):
         """ generated source for method __init__ """
-        super(CommissionAccount, self).__init__(customerNumber)
+        BankAccount.__init__(self,acctType, balance)
+        # super(CommissionAccount, self).__init__(customerNumber)
 
     def getMonthlyReport(self,accountInterest):
         """ generated source for method getMonthlyReport """
-        balance = balance + (balance * accountInterest) - 1.1
-        return balance
+        self.balance = self.balance + (self.balance * accountInterest) - 1.1
+        return self.balance
 
     def withdrawEnough(self, amount):
         """ generated source for method withdrawEnough """
-        balance -= amount
-        return "You withdrew: " + amount
+        self.balance -= amount
+        return "You withdrew: " + str(amount)

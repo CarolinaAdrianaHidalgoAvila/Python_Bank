@@ -1,11 +1,12 @@
-import BankAccount
+from Code.BankAccount.BankAccount import BankAccount
+
 class NoCommissionAccount(BankAccount):
     """ generated source for class NoCommissionAccount """
-    def __init__(self, accountNumber, customerNumber):
+    def __init__(self, acctType='Savings', balance=0):
         """ generated source for method __init__ """
-        super(NoCommissionAccount, self).__init__(customerNumber)
+        BankAccount.__init__(self, acctType, balance)
 
     def getMonthlyReport(self, accountInterest):
         """ generated source for method getMonthlyReport """
-        balance = balance + (balance * accountInterest)
-        return balance
+        self.balance = self.balance + (self.balance * accountInterest)
+        return self.balance

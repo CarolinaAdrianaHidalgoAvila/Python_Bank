@@ -1,8 +1,8 @@
-from BankEmpire import BankEmpire
-from Bank import Bank
-from Customer import Customer
-from HighNetWorthCustomer import HighNetWorthCustomer
-from BankAccount import BankAccount
+from Code.BankEmpire.BankEmpire import BankEmpire
+from Code.Bank.Bank import Bank
+from Code.Customer.Customer import Customer
+from Code.HighNetWorthCustomer.HighNetWorthCustomer import HighNetWorthCustomer
+from Code.BankAccount.BankAccount import BankAccount
 from datetime import datetime as dt
 
 ianbotzEmpire = BankEmpire('The Ianbotz Bank Empire')

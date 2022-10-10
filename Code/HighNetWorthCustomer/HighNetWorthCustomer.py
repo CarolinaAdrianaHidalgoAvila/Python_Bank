@@ -1,4 +1,4 @@
-from Customer import Customer
+from Code.Customer.Customer import Customer
 
 class HighNetWorthCustomer(Customer):
     'Represents a high net worth customer of a bank'
