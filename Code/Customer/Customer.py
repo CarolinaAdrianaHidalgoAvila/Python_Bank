@@ -7,19 +7,16 @@ class Customer(object):
         self.bankAccount = acct
     
     def incrementAge(self, incrementValue=1):
-        pastAge = self.age
-        self.age+=incrementValue
+        pastAge = self.age+ incrementValue
         return pastAge
 
     def changeIncome(self, newIncome):
-        pastIncome = self.income
         self.income = newIncome
-        return pastIncome
+        return self.income
     
     def changeBankAccount(self, newAccount):
-        oldAcct = self.bankAccount
         self.bankAccount = newAccount
-        return oldAcct
+        return self.bankAccount
 
     def makeDeposit(self, amount):
         if(amount>=0):

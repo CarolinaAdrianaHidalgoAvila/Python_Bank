@@ -4,4 +4,5 @@ from Code.BankAccount.HousingAccount import HousingAccount
 
 # Aqui esta vacio ¡¡ , guardarlo para la demo
 def test_withdraw_happyPath():
-    account = HousingAccount(balance=100)
+    houseAccount = HousingAccount(balance=100)
+    assert houseAccount is not None
