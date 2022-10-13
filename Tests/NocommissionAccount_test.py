@@ -1,7 +1,7 @@
 import pytest
-from Code.BankAccount.InvestmentFund import InvestmentFund
+from Code.BankAccount.NocommissionAccount import NoCommissionAccount
 
 def test_getMonthlyReport():
-    investment = InvestmentFund(balance=100)
-    resp = investment.getMonthlyReport(0.07)
-    assert resp == 105.9
+    nocommission = NoCommissionAccount(balance=100)
+    resp = nocommission.getMonthlyReport(0.07)
+    assert resp == 107
