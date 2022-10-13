@@ -75,11 +75,6 @@ def test_removeBank_path_8():
     resp = bankEmpire.removeBank(bank=None, bankName="Mercantil")
     assert resp == False
 
-def test_removeBank_path_8():
-    bankEmpire = BankEmpire( "Bancos del Norte") # lista vacia
-    resp = bankEmpire.removeBank(bank=None, bankName="Mercantil")
-    assert resp == False
-
 def test_removeBank_path_9():
     bankEmpire = BankEmpire( "Bancos del Norte")
     resp = bankEmpire.removeBank(bank=None, bankName=None)
