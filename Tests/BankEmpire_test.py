@@ -27,7 +27,6 @@ def test_removeBank_path_2():
     oneBank = Bank("Mercantil")
     anotherBank = Bank("Banco Unión")
     bankEmpire = BankEmpire( "Bancos del Norte", [oneBank])
-    bankEmpire.addBank(oneBank)
     resp = bankEmpire.removeBank(bank=anotherBank, bankName=None)
     assert resp == False
 
