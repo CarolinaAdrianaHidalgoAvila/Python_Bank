@@ -1,3 +1,4 @@
+import re
 import pytest
 from Code.Bank.Bank import Bank
 from Code.Customer.Customer import Customer
@@ -17,4 +18,16 @@ def bank(customers):
 def test_newBank(bank):
     assert bank.name=="BancoSol"
     assert isinstance(bank.customers, Iterable)
+    assert len(bank.customers)==4
     assert isinstance(bank, Bank)
+
+def test_addCustomer(bank):
+    reneCustomer = Customer('Rene Curious', 23, 60_000, BankAccount(balance=130))
+    res = bank.addCustomer(reneCustomer)
+    assert len(bank.customers)>4
+    assert res == True
+def test_addCustomer_fail(bank):
+    georgeCustomer = Customer('George Curious', 23, 60_000, BankAccount(balance=130))
+    res = bank.addCustomer(bank.customers[2])
+    assert len(bank.customers) == 4
+    assert res == False
