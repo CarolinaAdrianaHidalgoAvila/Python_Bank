@@ -30,9 +30,7 @@ def test_changeBankAccount(customer):
 def test_makeDeposit_positive(customer):
     balance_George=customer.makeDeposit(100)
     assert balance_George >= 130
-def test_makeDeposit_negative(customer):
-    balance_George=customer.makeDeposit(-1)
-    assert balance_George == 130
+
 def test_makeWithdrawal_1(customer):
     withdrawal= customer.makeWithdrawal(-1)
     assert withdrawal ==  130
@@ -44,4 +42,12 @@ def test_makeWithdrawal_3(customer):
     
     withdrawal= customer.makeWithdrawal(135)
     assert withdrawal == 130
+
+def test_name(customer):
+    with pytest.raises(Exception):
+        assert customer.name("George Curious")
+
+def test_makeDeposit_negative(customer):
+    with pytest.raises(Exception):
+        assert customer.makeDeposit(0)
 

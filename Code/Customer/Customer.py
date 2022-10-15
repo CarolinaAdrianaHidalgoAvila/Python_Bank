@@ -5,6 +5,22 @@ class Customer(object):
         self.age = age
         self.income = income
         self.bankAccount = acct
+    def name(self):
+        try:
+            print(self.name)
+        except NameError:
+            print("Variable name is not defined")
+        except:
+            print("Something else went wrong")
+   
+    def makeDeposit(self, amount):
+        if(amount>0):
+            self.bankAccount.deposit(amount)
+            print(f'Successful deposit of {amount} made!')
+        else:
+            raise Exception("You cannot deposit a negative amount!")
+           
+        return self.bankAccount.balance
     
     def incrementAge(self, incrementValue=1):
         pastAge = self.age+ incrementValue
@@ -18,13 +34,7 @@ class Customer(object):
         self.bankAccount = newAccount
         return self.bankAccount
 
-    def makeDeposit(self, amount):
-        if(amount>=0):
-            self.bankAccount.deposit(amount)
-            print(f'Successful deposit of {amount} made!')
-        else:
-            print('You cannot deposit a negative amount!')
-        return self.bankAccount.balance
+
 
     def makeWithdrawal(self, amount):
         balance = self.bankAccount.balance
