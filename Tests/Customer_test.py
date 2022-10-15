@@ -43,10 +43,6 @@ def test_makeWithdrawal_3(customer):
     withdrawal= customer.makeWithdrawal(135)
     assert withdrawal == 130
 
-def test_name(customer):
-    with pytest.raises(Exception):
-        assert customer.name("George Curious")
-
 def test_makeDeposit_negative(customer):
     with pytest.raises(Exception):
         assert customer.makeDeposit(0)

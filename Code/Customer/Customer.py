@@ -5,13 +5,7 @@ class Customer(object):
         self.age = age
         self.income = income
         self.bankAccount = acct
-    def name(self):
-        try:
-            print(self.name)
-        except NameError:
-            print("Variable name is not defined")
-        except:
-            print("Something else went wrong")
+
    
     def makeDeposit(self, amount):
         if(amount>0):
